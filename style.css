@@ -124,6 +124,7 @@ nav ul a {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     width: auto;
     height: 32px;
     padding: 0 16px;
@@ -132,7 +133,12 @@ nav ul a {
     font-weight: 500;
     line-height: 1;
     border-radius: 4px;
+    white-space: nowrap;
     transition: background-color .3s ease;
+}
+
+nav ul a i {
+    font-size: 20px;
 }
 
 nav ul:last-child {
@@ -246,15 +252,63 @@ header::after {
 }
 
 section {
+    position: relative;
     display: flex;
     align-items: flex-start;
     gap: 24px;
     width: 1116px;
     padding: 56px 0;
+    z-index: 1;
+}
+
+.hero {
+    min-height: 542px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+    transform: translateX(-50%);
+    background-position: center center;
+    background-size: cover;
+}
+
+.hero-1::after {
+    background-image: url(https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/energy-powerwall-hero-desktop.jpg);
+}
+
+.hero-2::after {
+    background-image: url(https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/energy-megapack-hero-desktop.jpg);
 }
 
 .aside {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+}
+
+footer {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 14px;
+}
+
+footer ul li a {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
 }
